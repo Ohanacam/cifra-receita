@@ -1,0 +1,314 @@
+:root {
+    --fundo: #fbf6f3;
+    --painel: #ffffff;
+    --painel-2: #fdf3f1;
+    --linha: #eddcd8;
+    --texto: #4a3a3c;
+    --suave: #8f7b7d;
+    --rosa: #b8707d;
+    --rosa-esc: #a35b69;
+    --rosa-clara: #f6e3e4;
+    --cinza: #6f6668;
+    --cinza-clara: #f3f0ef;
+    --erro: #b0524d;
+    --serif: Georgia, "Palatino Linotype", "Book Antiqua", serif;
+    --sans: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: var(--sans);
+    line-height: 1.55;
+}
+
+.container {
+    width: 92%;
+    max-width: 1150px;
+    margin: auto;
+    padding: 52px 0 72px;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- Cabeçalho ---------- */
+header { margin-bottom: 30px; text-align: center; }
+
+header h1 {
+    margin: 0 0 8px;
+    font-family: var(--serif);
+    font-size: 42px;
+    font-weight: normal;
+    font-style: italic;
+    color: var(--rosa-esc);
+}
+
+header p { margin: 0 auto; color: var(--suave); max-width: 56ch; }
+
+/* ---------- Abas ---------- */
+.tabs {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto 26px;
+    padding: 5px;
+    background: var(--painel);
+    border: 1px solid var(--linha);
+    border-radius: 999px;
+}
+
+.tab {
+    background: transparent;
+    color: var(--suave);
+    border: none;
+    padding: 10px 26px;
+    border-radius: 999px;
+    font: 600 15px var(--sans);
+    cursor: pointer;
+}
+
+.tab:hover { color: var(--rosa-esc); }
+.tab.active { background: var(--rosa); color: #fff; }
+
+/* ---------- Fluxo ---------- */
+.fluxo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0 0 22px;
+    padding: 0;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--suave);
+}
+
+.fluxo li {
+    padding: 5px 16px;
+    border: 1px solid var(--linha);
+    border-radius: 999px;
+    background: var(--painel);
+}
+
+.fluxo li:nth-child(2) {
+    color: var(--rosa-esc);
+    background: var(--rosa-clara);
+    border-color: #e6c3c6;
+}
+
+.fluxo li + li::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    border-top: 1px dashed #d3b5b8;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* ---------- Layout ---------- */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: stretch;
+}
+
+.card {
+    background: var(--painel);
+    border: 1px solid var(--linha);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 6px 24px rgba(160, 100, 105, 0.07);
+}
+
+.tabela-card, .card + .card { margin-top: 22px; }
+.grid .card + .card { margin-top: 0; }
+
+.card h2 {
+    margin: 0 0 6px;
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: normal;
+    color: var(--rosa-esc);
+}
+
+.topo-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.topo-card h2 { margin: 0; }
+
+.ajuda { margin: 0 0 4px; font-size: 14px; color: var(--suave); }
+
+/* ---------- Formulário ---------- */
+label {
+    display: block;
+    margin: 18px 0 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--texto);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: #fffdfc;
+    color: var(--texto);
+    border: 1px solid var(--linha);
+    border-radius: 12px;
+    font: 15px var(--sans);
+}
+
+input::placeholder, textarea::placeholder { color: #c2aeb0; }
+
+input:focus, textarea:focus { border-color: var(--rosa); outline: none; box-shadow: 0 0 0 3px var(--rosa-clara); }
+button:focus-visible { outline: 2px solid var(--rosa); outline-offset: 2px; }
+
+textarea { min-height: 130px; resize: vertical; line-height: 1.6; }
+
+.receita, .receita-input {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.8;
+    background: #fffaf7;
+}
+
+.receita { min-height: 420px; margin-top: 14px; }
+.receita-input { min-height: 300px; }
+
+button { font-family: var(--sans); }
+
+.primario {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    background: var(--rosa);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.primario:hover { background: var(--rosa-esc); }
+
+.secundario {
+    padding: 8px 18px;
+    background: transparent;
+    color: var(--rosa-esc);
+    border: 1px solid #e0b9bd;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.secundario:hover:not(:disabled) { background: var(--rosa-clara); }
+.secundario:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* ---------- Saída / mensagens ---------- */
+.saida {
+    margin-top: 14px;
+    min-height: 120px;
+    padding: 20px;
+    background: #fffaf7;
+    border: 1px solid var(--linha);
+    border-radius: 12px;
+    font-family: var(--serif);
+    font-size: 24px;
+    color: var(--texto);
+    word-break: break-word;
+}
+
+.saida.vazio {
+    background: #fffaf7;
+    border: 1px dashed #e3cfcb;
+    color: #c2aeb0;
+    font-family: var(--sans);
+    font-size: 15px;
+}
+
+.erro, .aviso {
+    margin-top: 18px;
+    padding: 12px 15px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.erro { background: #fbeceb; border: 1px solid #ecc5c2; color: var(--erro); }
+.aviso { background: #fdf4e3; border: 1px solid #ecd9a8; color: #8a6a1f; }
+
+/* ---------- Tabela da chave ---------- */
+.tabela {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.tabela:empty::after {
+    content: "Nenhuma chave informada ainda.";
+    grid-column: 1 / -1;
+    padding: 18px;
+    border: 1px dashed #e3cfcb;
+    border-radius: 12px;
+    color: #c2aeb0;
+    font-size: 14px;
+}
+
+.celula {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 9px 13px;
+    background: var(--painel-2);
+    border: 1px solid var(--linha);
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+.celula b {
+    min-width: 1ch;
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--rosa);
+}
+
+/* ---------- Como funciona ---------- */
+.regras { display: grid; grid-template-columns: 120px 1fr; margin: 16px 0 0; }
+
+.regras dt, .regras dd {
+    margin: 0;
+    padding: 12px 0;
+    border-top: 1px solid var(--linha);
+    font-size: 14px;
+}
+
+.regras dt { font-family: var(--serif); font-size: 16px; color: var(--cinza); }
+.regras dd { color: var(--suave); }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 850px) {
+    .grid { grid-template-columns: 1fr; }
+    header h1 { font-size: 34px; }
+    .receita { min-height: 300px; }
+}
+
+@media (max-width: 500px) {
+    .container { padding-top: 28px; }
+    .card { padding: 20px; }
+    .tabs { display: flex; width: 100%; }
+    .tab { flex: 1; padding: 10px 8px; }
+    .regras { grid-template-columns: 1fr; }
+    .regras dt { border-bottom: none; padding-bottom: 0; }
+    .regras dd { border-top: none; padding-top: 4px; }
+}
