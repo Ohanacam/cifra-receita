@@ -1,11 +1,5 @@
 # Cifra Receita
 
-![Cifra Receita](images/inicio.png)
-
-> Uma mensagem pode parecer apenas uma receita, mas a chave revela o que realmente está escrito.
-
-Projeto desenvolvido para a atividade de **Desenvolvimento de uma Cifra de Segurança**.
-
 A **Cifra Receita** é um método de criptografia simples e original que transforma uma mensagem em uma receita culinária. A mensagem é codificada utilizando uma **chave secreta**, que determina a relação entre as letras do alfabeto e diferentes ingredientes.
 
 O objetivo é fazer com que uma mensagem aparentemente comum seja apresentada no formato de uma receita, enquanto a pessoa que possui a chave consegue utilizar a mesma lógica para recuperar a mensagem original.
@@ -89,8 +83,6 @@ A mesma chave sempre gera a mesma tabela, permitindo que a receita seja posterio
 A aplicação possui uma área que permite visualizar a tabela gerada a partir da chave.
 
 A tabela apresenta a relação entre cada letra e os ingredientes correspondentes.
-
-![Tabela da chave](images/tabela-chave.png)
 
 A tabela é determinada pela chave utilizada. Por isso, a chave utilizada na descriptografia deve ser a mesma utilizada durante a criptografia.
 
