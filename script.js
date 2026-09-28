@@ -51,7 +51,7 @@ const INGREDIENTES = [
 const QUANTIDADE = Object.fromEntries(INGREDIENTES);
 const ORDEM = Object.fromEntries(INGREDIENTES.map(([nome], i) => [nome, i]));
 
-const LETRAS_EXTRAS = ["A", "E", "O", "I", "U"];
+const LETRAS_EXTRAS = ["A", "E", "O", "I", "U", "A", "O", "I", "E"];
 
 const ACENTOS = {
     "\u0301": "uma pitada de",
