@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifra Receita</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Cifra Receita</h1>
+        <p>Esconda uma mensagem dentro de uma receita de bolo usando uma chave secreta.</p>
+    </header>
+
+    <nav class="tabs" role="tablist">
+        <button class="tab active" role="tab" id="tab-cifrar" aria-selected="true" onclick="trocarAba('cifrar')">Criptografar</button>
+        <button class="tab" role="tab" id="tab-decifrar" aria-selected="false" onclick="trocarAba('decifrar')">Descriptografar</button>
+    </nav>
+
+    <!-- ========== CRIPTOGRAFAR ========== -->
+    <section id="painel-cifrar" class="painel" role="tabpanel">
+
+        <ol class="fluxo" aria-label="Fluxo da cifra">
+            <li>Mensagem</li>
+            <li>Chave</li>
+            <li>Receita</li>
+        </ol>
+
+        <div class="grid">
+
+            <div class="card">
+                <h2>Criptografar mensagem</h2>
+                <p class="ajuda">Digite um texto normal para transformá-lo em uma receita.</p>
+
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" placeholder="Ex.: Encontro às 19h na praça"></textarea>
+
+                <label for="chave">Chave secreta</label>
+                <input id="chave" type="text" placeholder="Digite a chave" autocomplete="off">
+                <p class="ajuda">A chave embaralha os 40 ingredientes. Use a mesma chave para descriptografar.</p>
+
+                <div id="erro-cifrar" class="erro hidden" role="alert"></div>
+
+                <button class="primario" onclick="cifrarMensagem()">Gerar receita</button>
+            </div>
+
+            <div class="card">
+                <div class="topo-card">
+                    <h2>Receita gerada</h2>
+                    <button id="btn-copiar" class="secundario" onclick="copiarReceita()" disabled>Copiar</button>
+                </div>
+                <textarea id="receita" class="receita" readonly
+                    placeholder="A receita aparece aqui depois de gerar."></textarea>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== DESCRIPTOGRAFAR ========== -->
+    <section id="painel-decifrar" class="painel hidden" role="tabpanel">
+
+        <ol class="fluxo" aria-label="Fluxo da cifra">
+            <li>Receita</li>
+            <li>Chave</li>
+            <li>Mensagem</li>
+        </ol>
+
+        <div class="grid">
+
+            <div class="card">
+                <h2>Descriptografar receita</h2>
+                <p class="ajuda">Cole a receita e informe a chave usada para gerá-la.</p>
+
+                <label for="receitaColada">Receita</label>
+                <textarea id="receitaColada" class="receita-input" placeholder="Cole aqui a receita"></textarea>
+
+                <label for="chaveDecifragem">Chave secreta</label>
+                <input id="chaveDecifragem" type="text" placeholder="Digite a mesma chave" autocomplete="off">
+
+                <div id="erro" class="erro hidden" role="alert"></div>
+
+                <button class="primario" onclick="descriptografarMensagem()">Descriptografar</button>
+            </div>
+
+            <div class="card">
+                <h2>Mensagem original</h2>
+                <div id="resultadoDecifragem" class="saida vazio">
+                    <span id="mensagemOriginal">A mensagem aparece aqui depois de descriptografar.</span>
+                </div>
+                <div id="aviso" class="aviso hidden"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== TABELA DA CHAVE ========== -->
+    <section class="card tabela-card">
+        <h2>Tabela da chave</h2>
+        <p class="ajuda">
+            Cada letra vira um ingrediente. As vogais têm mais de um, e a cifra alterna entre eles.
+            Digite uma chave para ver a tabela.
+        </p>
+        <div id="tabela" class="tabela"></div>
+    </section>
+
+    <!-- ========== COMO FUNCIONA ========== -->
+    <section class="card">
+        <h2>Como funciona</h2>
+        <dl class="regras">
+            <dt>Chave</dt>
+            <dd>Embaralha os ingredientes e define qual letra é qual ingrediente.</dd>
+
+            <dt>Palavras</dt>
+            <dd>Cada palavra vira uma etapa do modo de preparo.</dd>
+
+            <dt>Letras</dt>
+            <dd>Cada letra vira um ingrediente. Maiúscula acrescenta "de primeira".</dd>
+
+            <dt>Acentos</dt>
+            <dd>Viram medidas: "uma pitada de", "um toque de", "uma porção de", "uma colherada de", "um punhado de".</dd>
+
+            <dt>Números</dt>
+            <dd>A cada dois dígitos vira um tempo de cozinha (fogo, liquidificador, forno, geladeira).</dd>
+
+            <dt>Pontuação</dt>
+            <dd>Vira uma instrução curta, como "Mexa bem." para o ponto.</dd>
+
+            <dt>Finalização</dt>
+            <dd>Guarda o total de letras e palavras para conferir a mensagem ao descriptografar.</dd>
+        </dl>
+    </section>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
