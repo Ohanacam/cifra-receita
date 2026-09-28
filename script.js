@@ -23,7 +23,7 @@ const INGREDIENTES = [
     ["doce de leite", "100 g de doce de leite"],
     ["requeijão", "100 g de requeijão"],
     ["mel", "2 colheres de sopa de mel"],
-    ["café", "1 colher de chá de café"],
+    ["nutela", "1 colher de nutela"],
     ["essência de baunilha", "1 colher de chá de essência de baunilha"],
     ["canela", "1 colher de chá de canela"],
     ["gengibre", "1 colher de chá de gengibre"],
@@ -82,19 +82,19 @@ const ACOES_NUM = [
 const ABERTURA_PRIMEIRA = "Em uma tigela, misture";
 const ABERTURA_MEIO = [
     "acrescente",
-    "adicione",
+    "adicione aos poucos",
+    "misture bem",
     "junte",
+    "adicione",
     "incorpore",
     "misture",
     "combine",
     "envolva",
     "agregue",
     "una",
-    "adicione aos poucos",
     "junte delicadamente",
     "incorpore aos poucos",
     "misture delicadamente",
-    "misture bem",
     "combine delicadamente",
 ]
 const ABERTURA_ULTIMA = "por fim, adicione";
