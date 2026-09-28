@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cifra Receita</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -20,7 +20,6 @@
         <button class="tab" role="tab" id="tab-decifrar" aria-selected="false" onclick="trocarAba('decifrar')">Descriptografar</button>
     </nav>
 
-    <!-- ========== CRIPTOGRAFAR ========== -->
     <section id="painel-cifrar" class="painel" role="tabpanel">
 
         <ol class="fluxo" aria-label="Fluxo da cifra">
@@ -59,7 +58,6 @@
         </div>
     </section>
 
-    <!-- ========== DESCRIPTOGRAFAR ========== -->
     <section id="painel-decifrar" class="painel hidden" role="tabpanel">
 
         <ol class="fluxo" aria-label="Fluxo da cifra">
@@ -96,7 +94,6 @@
         </div>
     </section>
 
-    <!-- ========== TABELA DA CHAVE ========== -->
     <section class="card tabela-card">
         <h2>Tabela da chave</h2>
         <p class="ajuda">
@@ -106,7 +103,6 @@
         <div id="tabela" class="tabela"></div>
     </section>
 
-    <!-- ========== COMO FUNCIONA ========== -->
     <section class="card">
         <h2>Como funciona</h2>
         <dl class="regras">
@@ -135,6 +131,6 @@
 
 </div>
 
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="script.js"></script>
 </body>
 </html>
