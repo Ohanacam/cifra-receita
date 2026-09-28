@@ -80,7 +80,23 @@ const ACOES_NUM = [
 ];
 
 const ABERTURA_PRIMEIRA = "Em uma tigela, misture";
-const ABERTURA_MEIO = ["acrescente", "adicione", "junte", "incorpore", "Misture", "Mexa"];
+const ABERTURA_MEIO = [
+    "acrescente",
+    "adicione",
+    "junte",
+    "incorpore",
+    "misture",
+    "combine",
+    "envolva",
+    "agregue",
+    "una",
+    "adicione aos poucos",
+    "junte delicadamente",
+    "incorpore aos poucos",
+    "misture delicadamente",
+    "misture bem",
+    "combine delicadamente",
+]
 const ABERTURA_ULTIMA = "por fim, adicione";
 const POR_BLOCO = 4;
 
